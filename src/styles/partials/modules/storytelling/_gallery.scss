@@ -1,0 +1,340 @@
+//gallery
+.rwd.desk .story.paralax .body .wrapp_content .content_story.gallery {
+    margin-left: -5px; margin-right: -5px;
+    height: 559px;
+    position: relative;
+    margin-bottom: 30px;
+
+    .c0, .c1 {
+        width: 50%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        padding: 0 5px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        transition: all 1.0s ease;
+
+        img {
+            height: 100%;
+            transition: all 1.0s ease;
+        }
+        .row {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    
+    .c0 {
+        left: 0;
+        top: 0;
+        z-index: 2;
+
+        &:hover {
+            width: 100%;
+        }
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+    }
+
+    .c1 {
+        right: 0;
+        top: 0;
+
+        .row {
+            height: 50%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .row img {
+            height: 100%;
+        }
+
+        .row.row_1 {
+            padding-bottom: 5px;
+
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+        .row.row_2 {
+            padding-top: 5px;
+
+            &:hover img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.rwd.desk .story.paralax .body .wrapp_content .content_story.galleryFlex {
+    width: 100%;
+
+    .galleryInner {
+        width: 100%;
+        height: 625px;
+        position: relative;
+    }
+
+    ul {
+        position: relative;
+        left: 50%;
+        width: 1140px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include crossBrowser(transform, translateX(-50%));
+    }
+
+    li {
+        width: 33%;
+        height: 100%;
+        transition: all 0.3s ease-in-out 0s;
+        z-index: 1;
+        background-position: center;
+        background-size: contain;
+    }
+
+    // li::after {
+    //     background: url('http://bi.gazeta.pl/i/obrazki/storytelling/mercedes/pin_sprite.png') no-repeat 0 0;
+    //     width: 40px;
+    //     height: 40px;
+    //     display: block;
+    //     content: '';
+    //     position: absolute;
+    //     right: 0;
+    //     bottom: 0;
+    // }
+
+    .desc {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 5;
+        background: rgba(255,0,0,0.5);
+        height: 60px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    p b {
+        font-size: 14px;
+        line-height: 16px;
+        color: #fff;
+        font-weight: normal;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+
+    .imgGallery {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .imgGallery img {
+        height: 100%;;
+    }
+
+    .active::after {
+        display: none;
+    }
+
+    .active.desc {
+        display: block;
+    }
+
+    .active.elem_4 {
+        left: 0;
+    }
+}
+
+.rwd.desk .story.paralax .body .wrapp_content .content_story.galleryFlexV2 {
+    position: relative;
+    
+    .galleryInner {
+        height: 779px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    ul {
+        -moz-column-count: 3;
+        -moz-column-gap: 6px;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 6px;
+        column-count: 3;
+        column-gap: 6px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    li {
+        margin-bottom: 6px;
+        z-index: 1;
+        position: relative;
+    }
+
+    li::after {
+        background: url('https://bi.gazeta.pl/i/obrazki/storytelling/honda/pin_sprite.png') no-repeat 0 0;
+        width: 79px;
+        height: 79px;
+        display: block;
+        content: '';
+        position: absolute;
+        right: 39%;
+        bottom: 45%;
+    }
+
+    li img {
+        display: block;
+    }
+
+    li .desc {
+        display: none;
+    }
+
+    .photoBig {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    .photoBig img {
+        position: relative;
+        z-index: 1;
+    }
+
+    .photoBig .desc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 5;
+            background: rgba(225,1,50,0.5);
+            height: 60px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+    }
+
+    .photoBig .desc p {
+                font-size: 12px;
+                line-height: 14px;
+                color: #fff;
+    }
+
+    .photoBig .desc b {
+        font-size: 14px;
+        line-height: 16px;
+        color: #fff;
+        font-weight: normal;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+.rwd.responsive .story .body .wrapp_content .content_story.galleryFlexV2 {
+    width: 100%;
+
+    .galleryInner ul {
+        @include clearAfter;
+    }
+
+    .galleryInner ul li {
+        display: inline;
+        float: left;
+        margin: 0;
+    }
+
+    .galleryInner ul li .imgGallery {
+        display: none;
+    }
+
+    .photoBig {
+        display: none;
+    }
+}
+
+.rwd.responsive .story .body .wrapp_content .content_story.galleryFlex,.rwd.responsive .story .body .wrapp_content .content_story.galleryFlexV2 {
+    position: relative;
+
+    .galleryInner {
+        height: auto;
+        z-index: 1;
+    }
+
+    ul {
+        display: flex;
+
+        @include crossBrowser(transition, 0.5s);
+    }
+
+    .galleryInner ul li {
+        $photo_height: calc(1.2 * 50vw);
+        $photo_width: 100vw;
+        width: $photo_width;
+        height: $photo_height;
+        position: relative;
+        background-size: contain !important;
+        background-position: center;
+        left: unset;
+        bottom: unset;
+        right: unset;
+        top: unset;
+        margin-bottom: 2px;
+        flex-shrink: 0;
+        &:after {
+            display: none;
+        }
+        .desc {
+            display: none;
+        }
+    }
+
+    .arrow {
+        $arrow_pos: calc(0.88 * 50vw / 2);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 45px;
+        height: 45px;
+        display: block;
+        background: $mainLinkColor url('https://bi.gazeta.pl/i/obrazki/storytelling/vw/slider_arrows_sprite.png') no-repeat 0 0;
+        z-index: 2;
+        cursor: pointer; 
+        &.arrow_l {
+            right: unset;
+            bottom: unset;
+            top: $arrow_pos;
+            left: 0;
+        }
+        &.arrow_r {
+            bottom: unset;
+            top: $arrow_pos;
+            background-position: -45px 0;
+        }
+        &:hover {
+            background-color: $mainLinkHoverColor;
+        }
+    }
+}

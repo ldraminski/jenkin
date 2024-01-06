@@ -1,0 +1,78 @@
+.multiple-content {
+    position: relative;
+
+    $block: '.multiple-content';
+
+    @mixin twoWomens() {
+        &.multiple-content--two-womens & {
+            @content;
+        }
+    }
+
+    @include twoWomens() {
+
+        &__container-parallax {
+
+            &[data-id="1"] {
+
+                @include desk() {
+                    top: 62px;
+                    left: 651px;
+                    width: 633px;
+                    height: 713px;
+                }
+
+                @include mobile() {
+                    top: 27px;
+                    left: 196px;
+                    width: 283px;
+                }
+            }
+
+            &[data-id="2"] {
+
+                @include desk() {
+                    top: 7px;
+                    left: 101px;
+                    width: 341px;
+                    height: 780px;
+                }
+
+                @include mobile() {
+                    top: 5px;
+                    left: -49px;
+                    width: 152px;
+                }
+            }
+
+            &[data-id="3"] {
+
+                @include desk() {
+                    top: 356px;
+                    left: 404px;
+                    width: 531px;
+                    height: 208px;
+                }
+
+                @include mobile() {
+                    top: 158px;
+                    left: 78px;
+                    width: 242px;
+                }
+            }
+        }
+
+        &__txt--title {
+
+            @include desk() {
+                top: 325px;
+                left: 504px;
+            }
+
+            @include mobile() {
+                top: 142px;
+                left: 153px;
+            }
+        }
+    }
+}

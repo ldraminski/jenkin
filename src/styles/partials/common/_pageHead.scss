@@ -1,0 +1,126 @@
+
+.rwd.desk.simpleIndex.path_168029 #page-top {
+    // display: none !important;
+}
+
+.rwd.desk.simpleArt, .rwd.desk.simpleQuiz {
+    padding-top: 0px;
+
+    #page-top {
+        position: relative;
+        width: 100vw;
+        max-width: 100vw;
+        height: 129px;
+        margin-top: 0px;
+        //background-image: $imgWinietaBg;
+        background-color: transparent;
+        background-position: center;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    #pageHead {
+        width: 926px;
+        margin-top: 33px;
+        background: transparent !important;
+
+        .column {
+            height: 29px;
+        }
+
+        .column .imgw, .column img {
+            height: 100%;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .column.col1 {
+            float: left;
+        }
+
+        .column.col2 {
+            display: flex;
+            float: right;
+
+            .subcol {
+                height: 100%;
+            }
+        }
+    }
+
+    #rwdNav {
+        height: 20px !important;
+        background-color: transparent !important;
+        position: absolute;
+        left: 50%;
+        bottom: 14px;
+
+        @include crossBrowser(transform, translateX(-50%));
+
+        .p0 {
+            display: flex;
+            height: 100%;
+            justify-content: center !important;
+            overflow: hidden;
+        }
+
+        .p0 li {
+            background-color: transparent;
+            border-right: 1px #fff solid;
+            margin: 0px;
+        }
+
+        .p0 li#e1 {
+            //background-image: $imgHomeButton;
+            background-position: 0px center;
+            background-repeat: no-repeat;
+            background-size: 19px;
+
+            &:hover {
+                background-color: transparent !important;
+            }
+        }
+
+        .p0 li a {
+            height: 100%;
+            background: transparent !important;
+            padding: 0px 22px !important;
+            font: 400 12px/19px $fontMain !important;
+            text-transform: uppercase;
+        }
+
+        .p0 li:hover {
+            background-color: #fff;
+
+            a {
+                color: #16192c;
+            }
+        }
+
+        .p0 li.active {
+            background-color: #fff;
+
+            a {
+                color: #16192c;
+            }
+        }
+    }
+}
+
+.rwd.simpleIndex {
+
+    #page-top {
+        // display: none;
+    }
+}
+
+.rwd.responsive.simpleArt {
+    overflow-x: hidden;
+
+    #page {
+        padding: 50px 10px 10px 10px !important;
+    }
+}

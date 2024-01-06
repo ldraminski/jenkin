@@ -1,0 +1,209 @@
+
+.slider {
+
+    $block: '.slider';
+
+    @mixin infinity() {
+        &.slider--infinity & {
+            @content;
+        }
+    }
+
+    &.slider--infinity {
+
+        @include desk() {
+            height: 556px;
+        }
+
+        @include mobile() {
+            margin: 20px 0px;
+        }
+    }
+
+    &.slider--revert {
+
+        #{$block}__slide {
+
+            @include desk() {
+                flex-direction: row !important;
+            }
+        }
+
+        #{$block}__title, #{$block}__desc {
+
+            @include desk() {
+                padding: 0px 0px 0px 53px;
+            }
+        }
+
+        #{$block}__nav-dots {
+
+            @include desk() {
+                float: right;
+            }
+        }
+
+        #{$block}__bg {
+
+            @include desk() {
+                left: calc( (100vw - 1026px) / 2);
+                transform: translate(-300px,-50%) scaleX(1) !important;
+            }
+        }
+    }
+
+    @include infinity() {
+
+        &__slide {
+
+            @include desk() {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &__bg {
+
+            @include desk() {
+                right: calc((100vw - 1026px) / 2);
+                transform: translate(300px, -50%) scaleX(-1);
+            }
+
+            @include mobile() {
+                top: -29px !important;
+                left: -153px;
+                height: 317px;
+            }
+        }
+
+        &__wrapper {
+
+            @include desk() {
+                position: relative;
+                left: 50%;
+                width: 1126px;
+                height: 100%;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+        }
+
+        &__nav {
+            z-index: 2;
+
+            @include desk() {
+                width: 1026px;
+                height: 420px;
+            }
+        }
+
+        &__list {
+
+            &--animation {
+
+                @include crossBrowser(transition, 0.5s);
+            }
+
+            @include mobile() {
+                width: calc(100% - 40px);
+                height: 620px;
+                margin: 0px auto;
+                overflow: hidden;
+            }
+        }
+
+        &__slide {
+
+            @include desk() {
+                position: relative;
+                display: flex;
+                box-sizing: border-box;
+
+                &--clone {
+                    position: absolute;
+                    left: 0px;
+
+                    @include crossBrowser(transform, translateX(-100%));
+
+                    &:first-of-type {
+
+                        @include crossBrowser(transform, translateX(-200%));
+                    }
+                }
+            }
+
+            @include mobile() {
+                width: 100%;
+            }
+        }
+
+        &__img-container {
+
+            @include desk() {
+                width: 550px;
+            }
+
+            @include mobile() {
+                margin-top: 20px;
+                overflow: visible;
+            }
+        }
+
+        &__img-logo {
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            background-color: #fff;
+            padding: 4px 14px;
+
+            @include crossBrowser(transform, translateX(-50%));
+
+            @include desk() {
+                top: 49px;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+
+            @include mobile() {
+                top: -7px;
+                height: 22px;
+
+                @include crossBrowser(transform, translate(-50%, -100%));
+            }
+        }
+
+        &__content-wrapper {
+
+            @include desk() {
+                position: relative;
+                width: calc(100% - 550px);
+            }
+
+            @include mobile() {
+                height: 235px;
+                margin-top: 20px;
+                padding: 0px 20px;
+                text-align: center;
+                overflow: hidden;
+            }
+        }
+
+        &__button, &__title, &__desc {
+
+            @include desk() {
+                //opacity: 0;
+            }
+        }
+
+        &__nav-dots {
+
+            @include mobile() {
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                margin: 0px;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+        }
+    }
+}

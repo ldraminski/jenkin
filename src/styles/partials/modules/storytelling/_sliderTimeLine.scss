@@ -1,0 +1,95 @@
+$height_slider: 480px;
+
+.sliderTimelineStory {
+    position: relative;
+    width: $gridWidth;
+    margin-bottom: 30px;
+
+    section.body {
+        width:100%;
+        max-width: $gridWidth;
+        position: relative;
+
+    }
+    
+    section.body div > ul {
+        height: $height_slider;
+        width:9999px;
+        position: relative;
+        -webkit-transform: translateZ(0);
+
+    }
+
+    section.body div > ul li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        transition: -webkit-transform 1.2s ease 0s, transform 1.2s ease 0s, opacity 1.2s ease 0s;
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    section.body div > ul li .content {
+        position: absolute;
+        right: 120px;
+        top: 0;
+        z-index: 2;
+        width: 400px;
+        height: 100%;
+        background: #ffc815;
+        color: #000;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    section.body div > ul li .content header {
+        font-size: 26px;
+        line-height: 28px;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+
+    section.body div > ul li .content.active {
+        transform: scale(1);
+        opacity: 1;
+        z-index: 2;
+    }
+
+    section.body .sliderDots {
+            padding: 10px 0;
+    }
+
+    section.body .sliderDots .dot {
+        /*@include dim(12px, 12px);
+        border-radius: 12px;
+        background-color: 0;*/
+        transition: all 1.0s ease;
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 20px;
+        width: 85px;
+        height: 50px;
+        border: 2px solid #ffc815;
+        color: #000;
+        font-weight: bold;
+        top: 0;
+        position: relati
+    }
+
+    section.body .sliderDots .dot div {
+        width: 85px;
+        height: 50px;
+        overflow: hidden;
+        img {
+            width: 100px;
+        }
+    }
+
+    section.body .sliderDots .dot.active {
+        color: #dc5222;
+        border-color: #dc5222;
+        bottom: -95px;
+        top: -5px;
+    }
+}

@@ -1,0 +1,307 @@
+
+@include keyframes(fadeIn) {
+
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+@include keyframes(fadeOut) {
+
+    0% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+
+@include keyframes(textFadeIn) {
+
+    0% {
+
+        @include crossBrowser(transform, translateX(-450px));
+    }
+
+    100% {
+
+        @include crossBrowser(transform, translateX(0px));
+    }
+}
+
+
+@include keyframes(drawBorder) {
+
+    0% {
+
+        border: solid #fff 0px;
+    }
+
+    100% {
+
+        border: solid #fff 1px;
+    }
+}
+
+
+.slider {
+
+    $block: '.slider';
+
+    @mixin slideShow() {
+        &.slider--slide-show & {
+            @content;
+        }
+    }
+
+    @include slideShow() {
+
+        &__wrapper {
+
+            @include desk() {
+                position: relative;
+                left: 50%;
+            }
+        }
+
+        &__nav {
+
+            @include desk() {
+                width: 1037px;
+                height: 556px;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+        }
+
+        &__list {
+            
+            @include desk() {
+
+                @include crossBrowser(transform, translateX(-450px));
+            }
+
+            @include mobile() {
+                width: 290px;
+                height: 330px;
+                margin: 0px auto;
+                overflow: hidden;
+            }
+        }
+
+        &__slide {
+
+            @include desk() {
+                position: relative;
+
+                &--active {
+
+                    #{$block}__img-container {
+                        border: solid 1px #fff;
+
+                        @include crossBrowser(transition, border 0.1s 0.4s);
+                    }
+
+                    & + li #{$block}__img-bg {
+                        left: 0px;
+                    }
+
+                    #{$block}__img-bg {
+                        top: auto;
+                        bottom: 0px;
+                        height: 566px;
+
+                        @include crossBrowser(transform, translate(0px, 0px));
+                    }
+
+                    &#{$block}__slide--fadeIn {
+                        
+                        #{$block}__title {
+                            animation: textFadeIn 0.4s forwards 0.6s;
+                        }
+    
+                        #{$block}__desc {
+                            animation: textFadeIn 0.4s forwards 0.8s;
+                        }
+    
+                        #{$block}__title-inner {
+                            animation: textFadeIn 0.4s forwards 1s;
+                        }
+    
+                        #{$block}__desc-inner {
+                            animation: textFadeIn 0.4s forwards 1.2s;
+                        }
+    
+                        #{$block}__img-logo, #{$block}__title, #{$block}__desc {
+                            opacity: 1;
+                        }
+                    }
+                    
+                    &#{$block}__slide--fadeOut #{$block}__img-bg {
+                        top: 0px;
+                    }
+
+                    #{$block}__button {
+                        opacity: 1;
+                    }
+                }
+
+                :not(#{$block}__slide--active) {
+
+                    #{$block}__img-bg {
+                        border-top: solid #fff 1px;
+                        border-bottom: solid #fff 1px;
+                    }
+                }
+
+                &--fadeIn {
+
+                    #{$block}__img-container {
+                        animation: fadeIn 0.4s forwards 0.4s;
+                    }
+                }
+
+                &--fadeInNo {
+                    #{$block}__img-container {
+                        height: 100%;
+                    }
+                }
+
+                &--fadeOut {
+
+                    #{$block}__img-container {
+                        top: 0px;
+                        animation: fadeOut 0.4s forwards;
+                    }
+                }
+
+                &--clone {
+                    position: absolute;
+                    left: 0px;
+
+                    @include crossBrowser(transform, translateX(-100%));
+
+                    &:first-of-type {
+
+                        @include crossBrowser(transform, translateX(-200%));
+                    }
+                }
+            }
+
+            @include mobile() {
+                width: 100%;
+            }
+        }
+
+        &__img-container {
+
+            @include desk() {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: calc(100% - 50px);
+                height: 0px;
+                border-right: solid #fff 1px;
+                border-left: solid #fff 1px;
+
+                //@include crossBrowser(transition, height 1s);
+            }
+
+            @include mobile() {
+                height: 179px;
+                margin-top: 27px;
+                overflow: visible;
+            }
+        }
+
+        &__img-logo {
+            z-index: 1;
+            position: absolute;
+            left: 50%;
+            background-color: #fff;
+            padding: 4px 14px;
+
+            @include crossBrowser(transform, translateX(-50%));
+
+            @include desk() {
+                top: 49px;
+                opacity: 0;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+
+            @include mobile() {
+                top: 0px;
+
+                @include crossBrowser(transform, translate(-50%, -100%));
+            }
+        }
+
+        &__img-bg {
+
+            @include desk() {
+                left: auto;
+                right: 0px;
+                width: auto;
+                height: 362px;
+            }
+
+            @include mobile() {
+                height: 100%;
+            }
+        }
+
+        &__content-wrapper {
+
+            @include desk() {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                overflow: hidden;
+            }
+        }
+
+        &__title, &__desc {
+
+            @include desk() {
+                opacity: 0;
+
+                @include crossBrowser(transform, translateX(-450px));
+            }
+        }
+
+        &__title-inner, &__desc-inner {
+
+            @include desk() {
+                display: inline-block;
+
+                @include crossBrowser(transform, translateX(-450px))
+            }
+        }
+
+        &__desc {
+
+            @include desk() {
+                text-indent: 0px;
+            }
+        }
+
+        &__button {
+            opacity: 0;
+        }
+
+        &__nav-dots {
+
+            @include desk() {
+                
+                @include crossBrowser(transform, translateX(-50%));
+            }
+        }
+    }
+}

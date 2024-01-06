@@ -1,0 +1,1 @@
+var gazeta_pl = gazeta_pl || {};

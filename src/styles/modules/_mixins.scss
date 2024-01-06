@@ -1,0 +1,131 @@
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($speed-animation) {
+    -webkit-transition: $speed-animation;
+    -moz-transition: $speed-animation;
+    -ms-transition: $speed-animation;
+    -o-transition: $speed-animation;
+    transition: $speed-animation;
+}
+
+@mixin animation($animate) {
+    $max: length($animate);
+    $animations: '';
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation: $animations;
+    -o-animation: $animations;
+    animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin crossBrowser($property, $val) {
+    -webkit-#{$property}: $val;
+    -moz-#{$property}: $val;
+    -ms-#{$property}: $val;
+    #{$property}: $val;
+}
+
+@mixin on-circle() {
+    padding: 0;
+    border-radius: 50%;
+    list-style: none;
+    >.curiso__nav-el {
+        $angle: (360 / 20);
+        $rot: 55;
+        @for $i from 1 through 20 {
+            &:nth-of-type(#{$i}) {
+                transform: rotate( $rot * 1deg) translate( (562px / 2) * -1)
+            }
+            $rot: $rot - $angle;
+        }
+    }
+}
+
+@keyframes hideContent {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@mixin mediaQuery($resolution) {
+    @media only screen and (max-width: $resolution) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin minMediaQuery($resolution) {
+    @media only screen and (min-width: $resolution) {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin mobile() {
+    @media (max-width:419px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (max-width:999px) {
+        @content;
+    }
+}
+
+@mixin desk() {
+    @media (min-width:1000px) {
+        @content;
+    }
+}
+
+@mixin  clearAfter {
+    
+}
+
+// @mixin tablet() {
+//     @media (min-width:420px) {
+//         body.responsive {
+//             @content;
+//         }
+//     }
+// }
+
+// @mixin desk() {
+//     @media (min-width:1000px) {
+//         body.desk {
+//             @content;
+//         }
+//     }
+// }

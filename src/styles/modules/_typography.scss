@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;800&display=swap');
+@import url("https://use.typekit.net/lii8xou.css");
+
+
+$fontPath: 'https://static.im-g.pl/static/content/front/storytelling/nestle-2019/master/fonts/';
+
+@font-face {
+    font-family: GothamRounded;
+    src: url(#{$fontPath}GothamRounded-Book.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: GothamRounded;
+    src: url(#{$fontPath}GothamRounded-Medium.woff);
+    font-weight: 500;
+}
+
+$mainFont: 'Poppins', Sans-serif;
+$fontSecondary: 'Sedgwick Ave Display', cursive;
+$fontArt: Sans-serif;
+$fontMain: $mainFont;
+$fontArt: $mainFont;
+$fontArtEx: $mainFont;
+$fontArtTitle: $mainFont;
+$fontArtLead: 'Open Sans', Sans-serif;
+$fontHeaderArt: $mainFont;
+$fontH1Tyrol: 'signo', sans-serif;
+$fontTitleTyrol: "myriad-pro", Sans-serif;
+$fontArtTyrol: 'roboto', sans-serif;

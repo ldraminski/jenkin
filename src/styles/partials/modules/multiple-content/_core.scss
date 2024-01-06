@@ -1,0 +1,238 @@
+.multiple-content {
+
+    $block: '.multiple-content';
+
+    &__button {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    &:after {
+        content: 'KONKURS';
+        display: block;
+        margin: 0 auto;
+        padding-top: 50px;
+        font: 800 70px $mainFont;
+    }
+
+    &__txt {
+        text-align: center;
+        font-family: Lato, sans-serif;
+    }
+
+    @include desk() {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        height: 700px;
+        margin-bottom: 110px;
+
+        img {
+            width: 100%;
+        }
+
+        &__button {
+            width: 300px;
+            height: 60px;
+            font-size: 16px;
+            margin-bottom: 70px;
+      
+            &:hover {
+                cursor: pointer;
+                background: black;
+            }
+    
+            &:after {
+                content: "\2192";
+                font-size: 34px;
+                padding-left: 10px;
+                padding-bottom: 12px;
+            }
+        }
+
+        &__txt {
+            width: 70%;
+            font-size: 45px;
+            line-height: 45px;
+            font-weight: 300;
+        }
+
+        &:after {
+            padding-top: 50px;
+            font: 800 70px $mainFont;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @include tablet() {
+        width: 100%;
+        height: 625px;
+        background-position: -190px;
+        margin-top: -15px;
+
+        img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        &__button {
+            width: 220px;
+            height: 45px;
+            font-size: 12px;
+    
+            &:after {
+                content: "\2192";
+                font-size: 34px;
+                padding-left: 10px;
+                padding-bottom: 12px;
+            }
+        }
+
+        &__txt {
+            width: 300px;
+            font-size: 26px;
+            line-height: 28px;
+            font-weight: 300;
+            padding-top: 20px;
+        }
+
+        &:after {
+            padding-top: -14px;
+            font: 800 50px $mainFont;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    @include mobile() {
+        width: 100%;
+        height: 625px;
+        background-position: -400px;
+
+        img {
+            height: 500px;
+        }
+
+        &__button {
+            width: 220px;
+            height: 45px;
+            font-size: 12px;
+    
+            &:after {
+                content: "\2192";
+                font-size: 34px;
+                padding-left: 10px;
+                padding-bottom: 12px;
+            }
+        }
+
+        #{$block}__txt {
+            width: 200px;
+            font-size: 22px;
+            line-height: 24px;
+            font-weight: 300;
+
+        &--txt-bold {
+            width: 245px;
+            padding-top: 0;
+        }
+        }
+
+        &:after {
+            padding-top: 30px;
+            font: 800 50px $mainFont;
+            text-align: center;
+
+        }
+    }
+
+    &--increaseArea {
+        cursor: pointer;
+    }
+
+    &__column {
+        position: absolute;
+        top: 410px;
+        left: 0;
+        width: 1200px;
+
+        @include tablet() {
+            width: 100%;
+            top: 260px;
+        }
+
+        @include mobile() {
+            top: 300px;
+        }
+    }
+
+    &__bg {
+
+        @include mobile() {
+            max-width: 100%;
+        }
+    }
+
+    &__content-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+
+    }
+
+    &__txt--title {
+
+        #{$block}__column--left & {
+
+            @include mobile() {
+                width: 189px;
+                margin: 155px 42px auto auto;
+                font: 400 23px/27px $fontSecondary;
+            }
+        }
+    }
+
+    &__video-container {
+        margin: 20px auto;
+
+
+        @include desk() {
+            width: 1000px;
+            height: 425px;
+        }
+
+        @include mobile() {
+            width: 320px;
+            height: 136px;
+        }
+    }
+
+    a {
+        background-color: transparent;
+    }
+
+    &__container-parallax {
+        position: absolute;
+
+        @include desk() {
+            top: 0px;
+            left: 0px;
+        }
+    }
+}

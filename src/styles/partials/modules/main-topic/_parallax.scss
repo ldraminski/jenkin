@@ -1,0 +1,144 @@
+
+.main-topic {
+    z-index: 2;
+    position: relative;
+    
+    @mixin parallax() {
+        &.main-topic.main-topic--parallax & {
+            @content;
+        }
+    }
+
+    @include parallax() {
+        
+        &__container-bg-img {
+            position: absolute;
+
+            &[data-id="0"] {
+                z-index: 0;
+
+                @include desk() {
+                    top: 0px;
+                    left: 50%;
+                    transform: translateX(-50%) !important;
+                }
+
+                @include mobile() {
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                }
+            }
+
+            &[data-id="1"] {
+                z-index: 1;
+
+                @include desk() {
+                    top: 204px;
+                    left: 0px;
+                    width: 559px;
+                    height: 535px;
+                }
+
+                @include mobile() {
+                    top: 67px;
+                    left: 46px;
+                    width: 196px;
+                }
+            }
+
+            &[data-id="2"] {
+                z-index: 2;
+
+                @include desk() {
+                    top: 70px;
+                    left: 221px;
+                    width: 574px;
+                    height: 780px;
+                }
+
+                @include mobile() {
+                    top: 25px;
+                    left: 126px;
+                    width: 195px;
+                }
+            }
+
+            &[data-id="3"] {
+                z-index: 1;
+
+                @include desk() {
+                    top: 164px;
+                    left: 682px;
+                    width: 294px;
+                    height: 691px;
+                }
+
+                @include mobile() {
+                    top: 61px;
+                    left: 284px;
+                    width: 99px;
+                }
+            }
+
+            &[data-id="4"] {
+                z-index: 5;
+
+                @include desk() {
+                    top: 365px;
+                    left: 385px;
+                    width: 720px;
+                    height: 119px;
+                }
+
+                @include mobile() {
+                    top: 129px;
+                    left: 185px;
+                    width: 280px;
+                }
+            }
+
+            &[data-id="5"] {
+                z-index: 0;
+
+                @include desk() {
+                    top: 110px;
+                    left: 36px;
+                    width: 1425px;
+                    height: 758px;
+                }
+
+                @include mobile() {
+                    top: 38px;
+                    left: 43px;
+                    width: 534px;
+                }
+            }
+
+            &[data-id="6"] {
+                z-index: 4;
+
+                @include desk() {
+                    top: 204px;
+                    left: 984px;
+                    width: 405px;
+                    height: 498px;
+                }
+
+                @include mobile() {
+                    top: 67px;
+                    left: 385px;
+                    width: 141px;
+                }
+            }
+        }
+
+        &__bg-img {
+
+            @include desk() {
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}

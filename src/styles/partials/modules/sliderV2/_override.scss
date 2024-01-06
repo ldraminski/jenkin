@@ -1,0 +1,260 @@
+p.sliderV2__lead {
+
+    text-align: left;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 20px 20px 10px 20px;
+    color: #000;
+    margin-bottom: 50px;
+    font-family: $fontArtTyrol;
+}
+
+.sliderV2__controls {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: center;
+}
+
+button.sliderV2__controls-bullet {
+
+    width: 50px;
+    height: 7px;
+    margin: 0px 3px;
+    border: 0px;
+    background: #ffffff;
+    outline: none;
+}
+
+
+
+button.sliderV2__controls-bullet.glide__bullet--active {
+    background: #F4D100;
+    border: 0px;
+}
+
+button.sliderV2__controls-bullet.glide__bullet:focus{
+    background: #F4D100;
+    order: 0px;
+}
+
+
+button.sliderV2__controls-bullet.glide__bullet--hover {
+  
+    background:#F4D100;
+    border: 0px;
+}
+
+.sliderV2 {
+    $block: &;
+
+
+
+    @include desk() {
+        z-index: 9;
+        margin: 50px auto;
+        width: 1200px;
+        height: auto;
+        top: -321px;
+    }
+
+    @include mobile() {
+        margin: 0px auto;
+        z-index: 9;
+    }
+
+    &__wrapper {
+
+        @include mobile() {
+            height: auto;
+            margin: 0px auto;
+        }
+
+    }
+
+    &__slide {
+
+        @include desk() {
+          
+            height: 495px;
+       
+        }
+
+        @include mobile() {
+            height: auto;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &__slide--active {
+
+        @include desk() {
+            height: 464px;
+
+            #{$block}__container-img {
+                left: 50%;
+                width: 426px;
+                height: 413px;
+                margin: 0px;
+                transform: translateX(-50%);
+            }
+
+            #{$block}__author {
+                transform: translate(-27px,-30px);
+            }
+        }
+    }
+
+    &__author {
+        margin-bottom: 16px;
+        font: 400 10px/15px $fontMain;
+        color: #212529;
+
+        @include desk() {
+            align-self: flex-start;
+            transform: translateY(-30px);
+        }
+    }
+
+    &__container-img {
+        border-radius: 0px;
+        
+        @include desk() {
+         
+            width: 773px;
+            height: 495px;
+        }
+
+        @include mobile() {
+            position: relative;
+            height: 280px;
+        }
+    }
+
+    &__container-txt {
+        display: block;
+        height: 495px;
+        padding: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+        font-family: $fontTitleTyrol;
+      
+
+        @include desk() {
+            width: 38%;
+            left: 773px;
+        }
+
+
+        @include mobile() {
+            height: auto;
+            width: 100%;
+            padding-bottom: 57px;
+
+        }
+
+        
+    }
+
+    &__logo {
+        max-height: 22.4px;
+        margin-right: 12px;
+    }
+
+    &__title {
+        margin: 20px 20px 10px 20px;
+        font: bold 30px/30px $fontH1Tyrol;
+        color:#1E3C59;
+        text-align: left;
+    }
+
+    @include mobile() {
+    
+        &__title {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        p.sliderV2__lead  {
+            font-size: 16px;
+            line-height: 18px;
+        }
+
+        &__main-title {
+
+            font-size: 40px;
+            line-height: 42px;
+        }
+        .sliderV2__main-title {
+         
+            margin-top: - 20px; 
+            position: absolute;
+        
+        }
+
+
+        .sliderV2__main-title:after {
+         
+            margin-top: 20px; }
+
+
+    }
+
+
+    
+    &__title:after {
+
+        content: "";
+        display: block;
+        width: 250px;
+        height: 4px;
+        background: linear-gradient(to left, #ffffff87, #f4d100);
+        margin-top: 30px;
+      
+    }
+
+    &__nav-btn {
+        width: 21px;
+        height: 34px;
+        background-image: url('https://static.im-g.pl/im/4/26545/m26545664,ARROWR-TYROL2020-PNG.png');
+        background-size: cover;
+        visibility: hidden;
+    }
+
+    &__nav-btn--prev {
+        transform: translateX(-50%) rotate(180deg);
+        left: 787px;
+    }
+
+    @include mobile() {
+        &__nav-btn--prev {
+         
+            left: 10px;
+        }
+        &__nav-btn--next {
+            right: 0px;
+        }
+
+        &__nav {
+
+            top: 68%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &__nav-btn--next {
+        transform: translateX(50%) rotate(0deg);
+        margin-right: 12px;
+    }
+
+    &__bg {
+        top: 50%;
+        left: 50%;
+        transform: translate(calc(-50% - 200px), -900px);
+    }
+
+}

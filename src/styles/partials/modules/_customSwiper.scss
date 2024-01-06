@@ -1,0 +1,230 @@
+@import "config/all";
+@import "modules/typography";
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    margin-bottom: 90px;
+    font-family: $mainFont;
+    position: relative;
+
+    &__main-title {
+        width: 1200px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 700;
+        padding-bottom: 36px;
+
+        &:after {
+            content: 'PARTNERA';
+            font-weight: 300;
+            padding-left: 5px;
+        }
+    }
+
+    &__desc-inner {
+        color: $colorText;
+        font-weight: 700;
+    }
+
+    &__img-logo {
+        display: none;
+    }
+
+    &__img-container {
+        height: 100%;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 364px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 60%, rgba(168, 168, 168, 0.4) 80%, rgba(85, 85, 85, 0.9) 100%);
+        }
+    }
+
+    &__img-bg {
+        width: 100%;
+        height: 364px;
+        object-fit: cover;
+    }
+
+    &__button {
+        position: absolute;
+        top: 345px;
+        left: 0;
+    }
+
+    &__img-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 364px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .swiper-button {
+        width: 48px;
+        height: 48px;
+        background-size: 48px 48px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        width: 220px;
+        height: 42px;
+        background-color: $colorBackBtn;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $colorText;
+        font-size: $smallFontSizeBtn;
+
+        &:after {
+            content: "\2192";
+            font-size: 22px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    @include desk {
+
+        .swiper-container,
+        .swiper-container2 {
+            width: 100%;
+            margin: 0 auto;
+            // height: 388px;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        &__desc {
+            padding: 40px;
+        }
+
+        &__content-wrapper {
+            transform: translateY(-215px);
+        }
+
+        &__desc-inner {
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        &__button {
+            left: calc(50% - 110px);
+
+            &:hover {
+                cursor: pointer;
+                background-color: $colorBackBtn;
+                color: $colorText;
+            }
+        }
+
+        .swiper-button-prev, .swiper-button-prev2 {
+            background-image: url('https://static.im-g.pl/im/0/24998/m24998500,PREV-BUTTON.png');
+            left: calc(((100% - 1200px)/2) - 24px);
+            top: auto;
+            bottom: calc(388px/2);
+            cursor: pointer;
+        }
+
+        .swiper-button-next, .swiper-button-next2 {
+            background-image: url('https://static.im-g.pl/im/9/24998/m24998499,NEXT-BUTTON.png');
+            right: calc(((100% - 1200px)/2) - 24px);
+            top: auto;
+            bottom: calc(388px/2);
+            cursor: pointer;
+        }
+
+        .swiper-container {
+            width: 1200px;
+            height: 388px;
+        }
+
+        .swiper-button-prev2, .swiper-button-next2 {
+            position: absolute;
+            top: 300px;
+            z-index: 10;
+        }
+    }
+
+    @include tablet {
+
+        .swiper-container,
+        .swiper-container2 {
+            width: 100%;
+            height: 515px;
+            overflow: hidden;
+        }
+
+        &__img-container {
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 500px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(186, 186, 186, 0.3) 60%, rgba(85, 85, 85, 0.9) 100%);
+            }
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 500px;
+                position: relative;
+            }
+        }
+
+        &__button {
+            top: unset;
+            bottom: 0;
+            left: calc(50% - 110px);
+        }
+
+        &__content-wrapper {
+            top: 190px;
+        }
+
+        .swiper-button {
+            margin-top: 0;
+            top: 55%;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    @include mobile {
+
+        &__desc {
+            padding: 10px;
+        }
+
+        &__content-wrapper {
+            transform: translateY(-130px);
+        }
+
+        &__desc-inner {
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+}

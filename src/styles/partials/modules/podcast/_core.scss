@@ -1,0 +1,267 @@
+
+.podcast {
+    display: flex;
+    margin: 100px auto;
+    background-color: #fff;
+    border: solid 1px #CCCCCC;
+
+    @include desk() {
+        width: 750px;
+        height: 200px;
+    }
+
+    @include mobile() {
+        width: calc(100% - 20px);
+    }
+
+    &__thumbnail {
+
+        @include desk() {
+            position: relative;
+            width: 180px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        @include mobile() {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__thumbnail-pic {
+        width: 100%;
+    }
+
+    &__thumbnail-label {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        padding: 0px 10px;
+        font: 700 24px/28px Roboto;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-transform: uppercase;
+        color: #37393B;
+
+        @include mobile() {
+            display: none;
+        }
+    }
+
+    &__player {
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+
+        @include desk() {
+            padding: 12px 17px;
+        }
+
+        @include mobile() {
+            padding: 12px 8px;
+        }
+    }
+
+    &__top-controls {
+        margin-bottom: 10px;
+
+        @include desk() {
+            display: flex;
+            margin-top: 4px;
+        }
+
+        @include mobile() {
+            width: 160px;
+            height: 100px;
+            padding-left: 100px;
+        }
+
+        li {
+            margin-right: 5px;
+            font: 400 13px/16px Roboto;
+            color: #a5a5a5;
+
+            @include desk() {
+                margin-right: 12px;
+            }
+
+            @include mobile() {
+                font: 400 13px/20px Roboto;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        text-align: left;
+        font: 700 19px/24px Roboto;
+        color: #37393B;
+
+        @include desk() {
+            margin-top: 15px;
+        }
+
+        @include mobile() {
+            margin-bottom: 23px;
+            font: 700 14px/18px Roboto;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+
+        @include desk() {
+            margin-top: 16px;
+            margin: 16px 0px 0px 6px;
+        }
+    }
+
+    &__controls-btn {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+
+        @include mobile() {
+            display: none;
+        }
+    }
+
+    &__controls-btn-play {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        background-size: 100%;
+        transition: 0.1s;
+
+        &:hover {
+            background-image: url('https://static.im-g.pl/im/9/26850/m26850909,COMPONENT-12-PODCAST-NEW.png');
+        }
+
+        @include desk() {
+            margin: 0px 10px;
+            background-image: url('https://static.im-g.pl/im/8/26850/m26850908,COMPONENT-11-PODCAST-NEW.png');
+
+        }
+
+        @include mobile() {
+            position: absolute;
+            top: 26px;
+            right: 23px;
+            width: 49px;
+            height: 49px;
+            background-image: url('https://static.im-g.pl/im/4/26837/m26837004,INTELIGENTNY-OBIEKT-WEKTOROWY-V2.png');
+        }
+    }
+
+    &__controls-progress {
+        position: relative;
+        display: flex;
+        margin-left: 22px;
+        align-items: center;
+
+        @include mobile() {
+            display: none;
+        }
+    }
+
+    &__controls-progress-bar {
+        position: relative;
+        width: 373px;
+        height: 2px;
+        background-color: #37393B;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 58px;
+            top: 50%;
+            width: 23px;
+            height: 8px;
+            background-color: #37393B;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__podcast-duration, &__podcast-end {
+        position: absolute;
+        bottom: 0px;
+        font: 400 13px/16px Roboto;
+        color: #A5A5A5;
+        transform: translateY(calc(100% + 5px));
+    }
+
+    &__podcast-end {
+        left: auto;
+        right: 0px;
+    }
+
+    &__bottom-controls {
+        position: absolute;
+        right: 17px;
+        bottom: 12px;
+        display: flex;
+
+        li {
+            position: relative;
+            margin-right: 10px;
+            font: 400 13px/16px Roboto;
+            color: #a5a5a5;
+            text-transform: uppercase;
+
+            @include mobile() {
+                font: 400 11px/12px Roboto;
+            }
+
+            &:hover span {
+                color: #37393B;
+            }
+
+            li:hover {
+                cursor: pointer;
+                color: #37393B;
+            }
+        }
+
+        span {
+            color: #a5a5a5;
+            cursor: pointer;
+
+            @include mobile() {
+                color: #a5a5a5;
+                font: 400 11px/12px Roboto;
+            }
+        }
+
+        li:hover ul {
+            opacity: 1;
+        }
+    }
+
+    &__bottom-controls-sublist-wrapper {
+        position: absolute;
+        left: 50%;
+        bottom: 0px;
+        padding-top: 12px;
+        transform: translate(-50%, 100%);
+    }
+
+    &__bottom-controls-sublist {
+        border: solid 1px #CCCCCC;
+        padding: 0px 10px;
+        background-color: #fff;
+        text-align: center;
+        opacity: 0;
+        transition: 0.4s;
+
+        li {
+            padding: 10px 0px 0px 0px;
+
+            &:last-of-type {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}

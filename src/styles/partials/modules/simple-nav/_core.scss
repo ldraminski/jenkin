@@ -1,0 +1,83 @@
+
+.simple-nav {
+
+    $block: '.simple-nav';
+
+    @include desk() {
+        z-index: 8;
+        position: fixed;
+        top: 50%;
+        right: 180px;
+
+        @include crossBrowser(transform, translateY(-50%));
+    }
+
+    @include mobile() {
+        display: none;
+    }
+
+    &__list {
+
+        @include desk() {
+            position: relative;
+            display: flex;
+            width: 55px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__el {
+
+        @include desk() {
+            position: relative;
+            width: 54px;
+            height: 72px;
+            margin-bottom: 11px;
+            background-image: $imgNavButton;
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+            &:hover {
+                background-image: $imgNavButtonActive;
+
+                #{$block}__title {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__el--home {
+
+        @include desk() {
+            background-image: $imgNavButtonHome;
+
+            &:hover {
+                background-image: $imgNavButtonHomeActive;
+            }
+        }
+    }
+
+    &__title {
+
+        @include desk() {
+            z-index: -1;
+            position: absolute;
+            top: 26px;
+            right: -5px;
+            display: none;
+            width: 342px;
+            padding: 10px 70px 10px 40px;
+            background-color: #004ea2;
+            border-radius: 25px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+    }
+
+    a, a:hover {
+        background-color: transparent;
+    }
+}

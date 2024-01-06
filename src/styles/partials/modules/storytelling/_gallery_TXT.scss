@@ -1,0 +1,69 @@
+//gallery_TXT
+.story.paralax.gallery_TXT {
+    position: relative;
+    margin-bottom: 30px;
+
+    ul {
+        @include clearAfter;
+    }
+
+    ul li {
+        display: inline-block;
+        float: left;
+        position: relative;
+        width: 410px; 
+        height: 250px;
+        overflow: hidden;
+    }
+
+    ul li:hover {
+
+        .info {
+            opacity: 1;
+        }
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    ul li .imgw {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        img {
+            transition: all 1.0s ease;
+            width: 100%;
+        }
+    }
+    
+    ul li .info {
+        position: relative;
+        z-index: 2;
+        background: $bgColorAlpha;
+        transition: all 1.0s ease;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        color: #fff;
+    }
+
+    ul li .info h4 {
+        font-size: 20px;
+        line-height: 22px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 15px 0;
+        color: #ffc815;
+    }
+}
+
+#{$bodyClassRWD} .story.paralax.gallery_TXT {
+    
+    ul li {
+        width: 100%;
+    }
+}

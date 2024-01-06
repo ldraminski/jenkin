@@ -1,0 +1,281 @@
+
+
+.rwd .story.paralax .body .wrapp_content .content_story.sliderFull {
+
+    @include desk() {
+        position: relative;
+        left: 50%;
+        height: 579px;
+
+        @include crossBrowser(transform, translateX(-50%));
+    }
+
+    .sliderFullEmiter {
+
+        .body {
+
+            @include desk(){
+                position: relative;
+                width: 1170px;
+                height: 531px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0px;
+                    width: 625px;
+                    height: 11px;
+                    background-color: #FF0000;
+                    transform: translate(-50%, 11px);
+                }
+            }
+
+            .holder {
+                overflow: hidden;
+                width: $gridWidth;
+                position: relative;
+                z-index: 1;
+
+                @include desk() {
+                    left: 50%;
+                    width: 1170px;
+                    height: 531px;
+
+                    @include crossBrowser(transform, translateX(-50%));
+                }
+                ul {
+                    @include clearAfter;
+                    width: 100%;
+
+                    @include desk() {
+                        height: 100%;
+                    }
+                    li {
+                        display: inline-block;
+                        position: relative;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        @include clearAfter;
+
+                        @include desk() {
+                            width: 1170px;
+                            height: 100%;
+                        }
+                        .imgw {
+                            width: $gridWidth;
+                            overflow: hidden;
+
+                            @include desk() {
+                                width: 100%;
+                            }
+
+                            img {
+                                width: 100%;
+                                display: block;
+
+                                @include desk() {
+                                    width: auto;
+                                    height: 100%;
+                                }
+                            }
+
+                            @include desk() {
+                                width: 100%;
+                            }
+                        }
+                        .desc {
+                            word-wrap: break-word;
+                            width: 100%;
+                            height: 46px;
+                            line-height: 46px;
+                            background: rgba(0,0,0,0.5);
+                            box-sizing: border-box;
+                            font-size: 12px;
+                            padding: 0 10px;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            color: #fff;
+                            h4 {
+                                font-size: 12px;
+                                line-height: 46px;
+                                font-weight: bold;
+                                margin: 15px 0;
+                                margin-bottom: 60px;
+                                margin-top:0;
+                                display: inline-block
+                            }
+                            p {
+                                display: inline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .arrow {
+
+                @include desk() {
+                    z-index: 9;
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    width: 57px;
+                    height: 57px;
+                    background-image: url('https://static.im-g.pl/im/8/25929/m25929478,REN-NIEMCY-SLIDER-BUTTON.png');
+                    transform: translateY(-50%);
+                    cursor: pointer;
+                }
+            }
+
+            .arrow_r {
+
+                @include desk() {
+                    left: auto;
+                    right: 0px;
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+
+            .sliderDots {
+
+                @include desk() {
+                    z-index: 10;
+                    position: absolute;
+                    bottom: 152px;
+                    left: 50%;
+                    display: flex;
+                    justify-content: center;
+                    list-style: none;
+                    display: none;
+    
+                    @include crossBrowser(transform, translateX(-50%));
+                }
+
+                .dot {
+
+                    @include desk() {
+                        width: 16px;
+                        height: 23px;
+                        margin-right: 8px;
+                        background-image: $imgSliderNavDot;
+                        background-size: contain;
+                        cursor: pointer;
+    
+                        &:hover {
+                            background-image: $imgSliderNavDotActive;
+                        }
+                    }
+                }
+
+                .dot.active {
+
+                    @include desk() {
+                        background-image: $imgSliderNavDotActive;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rwd.responsive .story .body .wrapp_content .content_story.sliderFull {
+    .sliderFullEmiter {
+        .body {
+            position: relative;
+
+            .arrow {
+                position: absolute;
+                width: 40px;
+                height: 100%;
+                display: block;
+                background: url('https://bi.gazeta.pl/i/obrazki/storytelling/vw/slider_arrows_sprite.png') no-repeat 0 center;
+                z-index: 2;
+                cursor: pointer; 
+                &.arrow_l {
+                    left: 0;
+                    &:hover {
+                        background-position: -80px center;
+                    }
+                }
+                &.arrow_r {
+                    background-position: -40px center;
+                    right: 0;
+                    &:hover {
+                        background-position: -120px center;
+                    }
+                }
+            }
+
+            .sliderDots {
+                margin-top: 12px;
+                position: relative;
+                z-index: 2;
+                display: flex;
+                justify-content: center;
+                @include clearAfter;
+                li {
+                    border: solid 1px #fff;
+                    border-radius: 50%;
+                    background: #000;
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    float: left;
+                    margin-left: 12px;
+                    cursor: pointer;
+                    &.active {
+                        background-color: #fff;
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .sliderDots {
+                display: flex;
+                justify-content: center;
+                width: 90vw;
+            }
+
+            .holder {
+                width: 100%; 
+                ul {
+                    display: flex;
+                    li {
+                        width: 100vw;
+                        height: auto;
+                        flex-shrink: 0;
+                        .imgw {
+                            width: 100%;
+                            height: auto;
+                            float: none;
+                            img {
+                                width: 100vw;
+                            }
+                        }
+                        .desc {
+                            width: 100%;
+                            height: auto;
+                            float: none;
+                            padding: 15px;
+                            line-height: 14px;
+                            h4 {
+                                font-size: 12px;
+                                line-height: 14px;
+                                margin-bottom: 10px;
+                                margin-top: 0;
+                            }
+                            .lead {
+                                font-size: 12px;
+                                line-height: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

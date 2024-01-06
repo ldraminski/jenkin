@@ -1,0 +1,46 @@
+// @import "~portal/mixins/all";
+// @import "~portal/modules/common";
+// @import "~portal/partials/reset";
+// @import "~portal/partials/content/sociallButtons";
+
+// // // Pliki defaultowe
+// @import "~portal/mixins/all";
+// @import "~portal/modules/common";
+// @import "~portal/partials/reset";
+// @import "~portal/partials/content/sociallButtons";
+
+// // // Pliki defaultowe
+// @import "~portal/modules/nst";
+// @import "~portal/modules/nfs";
+// @import "~portal/modules/gallery";
+// @import "~portal/partials/new_quiz";
+
+@import "config/all";
+@import "modules/all";
+@import "partials/all";
+@import "vendor/all";
+@import "lib/swiper";
+
+html, body {
+	width: 100%;
+}
+a {
+	text-decoration: none;
+}
+#sitePath {
+	display: none;
+}
+
+#banP76 {
+	margin: 0;
+}
+
+#page {
+	z-index: 0;
+}
+
+.path_152347{
+	#gazeta_article_image > div {
+		float: none;
+	}
+}

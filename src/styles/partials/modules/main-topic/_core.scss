@@ -1,0 +1,303 @@
+@import "modules/typography";
+
+.main-topic {
+    z-index: 2;
+    position: relative;
+    font-family: $mainFont;
+
+    $block: '.main-topic';
+
+    &__container {
+        position: relative;
+        display: flex;
+
+        @include desk() {
+            width: 1390px;
+            height: 760px;
+            margin: 0px auto;
+        }
+
+        @include mediaQuery(1400px) {
+            position: relative;
+            left: 50%;
+            margin: 0px;
+
+            @include crossBrowser(transform, translateX(-50%));
+        }
+    }
+
+    &__video,
+    &__bg-img {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+
+        @include crossBrowser(transform, translateX(-50%));
+
+        @include desk() {
+            height: 100%;
+        }
+
+        @include mobile() {
+            width: 100%;
+        }
+    }
+
+    &__content {
+
+        @include desk() {
+            top: 0;
+            position: absolute;
+            left: 50%;
+            width: 1200px;
+            height: 760px;
+            // display: flex;
+
+            @include crossBrowser(transform, translateX(-50%));
+        }
+
+        @include mobile() {
+            position: relative;
+        }
+    }
+
+    &__logo {
+        margin-left: -50px;
+
+        @include mobile() {
+            display: none;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+        }
+    }
+
+    &__txt {
+        padding-bottom: 30px;
+        font: 200 50px/50px $fontMain;
+        text-align: center;
+
+        @include desk() {
+            position: relative;
+            top: 20%;
+        }
+
+        @include tablet() {
+            font-size: 55px;
+            line-height: 60px;
+            padding: 20px;
+            width: 400px;
+        }
+
+        @include mobile() {
+            width: 100%;
+            margin-top: 60px;
+            padding: 20px 10px 0px 0px;
+            font-size: 42px;
+            line-height: 42px;
+            box-sizing: border-box;
+        }
+
+        b {
+
+            @include desk() {
+                font: 800 115px/138px $fontMain;
+            }
+
+            @include mobile() {
+                font: 800 50px/40px $fontMain;
+            }
+        }
+    }
+
+    a {
+        background-color: transparent;
+    }
+}
+
+.rwd.desk {
+
+    .custom-slider {
+        overflow: unset !important;
+
+        .swiper-container2 {
+            height: 435px;
+        }
+    }
+
+    .mod_pseudo_index {
+
+        .swiper-container2 {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            max-width: 1200px;
+        }
+
+        .swiper-button {
+            width: 48px;
+            height: 48px;
+            background-size: 48px 48px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .swiper-button-next {
+            background-image: url('https://static.im-g.pl/im/9/24998/m24998499,NEXT-BUTTON.png');
+            right: calc(((100% - 1200px)/2) - 24px);
+        }
+
+        .swiper-button-prev {
+            background-image: url('https://static.im-g.pl/im/0/24998/m24998500,PREV-BUTTON.png');
+            left: calc(((100% - 1200px)/2) - 24px);
+        }
+    }
+
+}
+
+.rwd.tablet {
+
+    .mod_sponsors {
+        position: static !important;
+        margin: 0 auto !important;
+        left: 0 !important;
+        width: 500px !important;
+        height: auto !important;
+        transform: none !important;
+
+        ul {
+            padding: 0;
+        }
+    }
+
+    .mod_hat2014 {
+        // display: none;
+    }
+
+    .main-topic {
+
+        width: auto;
+        background: url('https://static.im-g.pl/im/6/25030/m25030036,POZNAJ-NIEMCY-TA-O2.jpg') no-repeat;
+        height: 510px;
+        background-size: cover;
+
+        &__container {
+            width: 100%;
+        }
+
+        &__content {
+
+            top: unset;
+            position: static;
+            left: unset;
+            max-width: none;
+            transform: none;
+
+            img {
+                display: none;
+            }
+        }
+
+        &__txt {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-size: 75px;
+            line-height: 77px;
+            width: 400px;
+        }
+    }
+
+    .mod_pseudo_index {
+
+        .swiper-slide {
+            width: 25%;
+
+            .logo {
+                width: 160px;
+                top: 130px;
+
+                img {
+                    width: 160px;
+                }
+            }
+
+            .content {
+
+                a {
+                    top: 145px;
+                }
+            }
+        }
+
+        .myfitness {
+
+            .logo {
+                width: 120px !important;
+
+                img {
+                    width: 120px !important;
+
+                }
+            }
+        }
+
+        .btn {
+            width: 150px;
+            left: calc(50% - 75px);
+        }
+    }
+
+    .multiple-content--singleColumn {
+        width: 100%;
+    }
+
+    .slider {
+
+        &__main-title {
+            width: 100%;
+        }
+
+        &__wrapper {
+            height: 383px;
+
+            li {
+                height: 383px;
+
+            }
+        }
+
+        &__img-container {
+
+            &:after {
+                height: 362px;
+            }
+        }
+
+        &__img-bg {
+            height: 362px;
+        }
+
+        .swiper-button {
+            display: none;
+        }
+    }
+}
+
+.rwd.responsive {
+
+    .mod_pseudo_index {
+
+        .swiper-slide {
+
+            .logo {
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+
+.slider {
+
+    $block: '.slider';
+
+    @mixin slideShowStorys() {
+        &.slider--slide-show.slider--storys & {
+            @content;
+        }
+    } 
+
+    @include desk() {
+        &--slide-show.slider--storys {
+            margin-left: calc( (100vw - 100%) / -2 );
+        }
+    }
+
+    @include slideShowStorys() {
+
+        &__wrapper {
+            
+            @include desk() {
+                width: 100vw;
+            }
+        }
+
+        &__list {
+
+            @include mobile() {
+                height: 210px;
+            }
+        }
+
+        &__nav-dots {
+            
+            @include desk() {
+                width: 900px;
+                margin-top: -48px;
+                padding-left: 68px;
+                justify-content: left;
+            }
+        }
+
+        &__nav-dot {
+
+            @include desk() {
+                width: 151px;
+                height: 93px;
+                margin: 0px 2px 0px 0px;
+                border: solid 1px #fff;
+                border-radius: 0px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            &:hover {
+
+                @include desk() {
+                    border-width: 7px;
+                }
+            }
+
+            &--active {
+
+                @include desk() {
+                    border-width: 7px;
+                }
+            }
+        }
+
+        &__nav-thumbnail {
+
+            @include desk() {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+.story.paralax {
+
+    >header {
+        // display: none;
+        z-index: 0;
+        position: relative;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 700px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-color: #ffffff;
+
+        @include desk() {
+            background-position-y: 0px !important;
+        }
+    }
+
+    .header {
+        h2 {
+            @include desk() {
+                font: 400 42px/42px $fontArt;
+                color: #004ea2;
+            }
+        }
+    }
+
+    .body .lead {
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .body .logo {
+
+        @include desk() {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            text-align: center;
+            margin: 10px 0;
+
+            @include crossBrowser(transform, translate(-50%, -50%));
+
+        }
+
+        img {
+
+            @include mobile() {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .content_inner {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        @include tablet {
+            width: 100vw;
+        }
+    }
+
+    .content_inner .header_inner {
+        display: none;
+    }
+
+    .content_inner .wrapp_content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -20px !important;
+    }
+
+    .content_inner .wrapp_content .content_story.col2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+
+        .c0,
+        .c1 {
+            float: none;
+            width: 50%;
+            border: 0;
+            min-height: 200px;
+        }
+    }
+
+    .content_inner .wrapp_content .content_story.photo {
+        z-index: 3;
+
+        @include desk {
+            max-height: 1125px;
+        }
+
+        @include tablet {
+            height: 100vh;
+        }
+    }
+
+    @include tablet {
+        .content_inner .wrapp_content .content_story.photo img {
+            width: 100vw;
+            height: 70vh;
+            object-fit: cover;
+        }
+    }
+
+    .content_inner .wrapp_content .c0,
+    .content_inner .wrapp_content .c1 {
+        float: none;
+        width: auto;
+    }
+}
+
+.first-photo {
+    //margin-top: -80px !important;
+}
+
+.story.paralax.mod_zr_story_2 {
+
+    .lead {
+        color: #fff;
+        text-align: center;
+    }
+}
+
+#{$bodyClassRWD} .story.paralax.mod_zr_story_2 {
+
+    .header {
+        margin-top: - 155px;
+    }
+
+    .lead {
+        display: none;
+    }
+}

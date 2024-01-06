@@ -1,0 +1,252 @@
+@import "config/all";
+@import "modules/typography";
+
+.mod_pseudo_index {
+    font-family: $mainFont;
+
+    .btn {
+        position: absolute;
+        left: calc((100% - 220px)/2);
+        width: 220px;
+        height: 45px;
+        background-color: $colorBackBtn;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: $colorText;
+            font-size: $smallFontSizeBtn;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:after {
+                content: "\2192";
+                font-size: 34px;
+                padding-left: 6px;
+                padding-bottom: 13px;
+            }
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    .logo {
+        max-width: 180px;
+        position: absolute;
+        left: 15px;
+        z-index: 10;
+
+        a:hover {
+            background: none;
+        }
+    }
+
+    .content a {
+        position: absolute;
+        color: $colorText;
+        font-weight: bold;
+        padding: 18px;
+        font-size: 16px;
+        line-height: 20px;
+
+        &:hover {
+            background: none;
+            cursor: default;
+        }
+    }
+
+    @include desk() {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        & ul {
+            display: flex;
+        }
+
+        & li {
+            width: 25%;
+            position: relative;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .imgw {
+
+            a {
+                width: 100%;
+                height: 420px;
+                display: block;
+                overflow: hidden;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(186, 186, 186, 0.3) 60%, rgba(85, 85, 85, 0.9) 100%);
+                }
+
+                img {
+                    transition: 0.5s;
+                }
+            }
+
+            &:hover {
+                a img {
+                    transform: scale(1.2);
+                    transition: 0.5s;
+                }
+            }
+
+        }
+
+        .btn {
+            bottom: -15px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            a {
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+
+        .logo {
+            top: 260px;
+        }
+
+        .content a {
+            top: 305px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .myfitness .logo {
+            padding-top: 4px;
+
+            img {
+                width: 130px;
+            }
+        }
+    }
+
+    @include tablet() {
+        width: 100%;
+        height: 320px;
+
+        .imgw {
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 305px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(186, 186, 186, 0.3) 60%, rgba(85, 85, 85, 0.9) 100%);
+            }
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 305px;
+                position: relative;
+            }
+        }
+
+        .btn {
+            bottom: 0;
+        }
+
+        .logo {
+            top: 175px;
+        }
+
+        .content a {
+            top: 190px;
+        }
+
+        .myfitness .logo {
+            padding-top: 5px;
+
+            img {
+                width: 125px;
+            }
+        }
+
+        .swiper-button-prev {
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .swiper-button-next {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    @include mobile() {
+        width: 100%;
+        height: 515px;
+
+        .imgw {
+
+            &:after {
+                position: absolute;
+                content: "";
+                height: 500px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(186, 186, 186, 0.3) 60%, rgba(85, 85, 85, 0.9) 100%);
+            }
+
+            & img {
+                object-fit: cover;
+                width: 100%;
+                height: 500px;
+                position: relative;
+            }
+        }
+
+        .btn {
+            bottom: 0;
+        }
+
+        .logo {
+            top: 320px;
+        }
+
+        .content a {
+            top: 350px;
+        }
+
+        .myfitness .logo {
+            padding-top: 4px;
+
+            img {
+                width: 130px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,62 @@
+.multiple-content {
+    position: relative;
+
+    $block: '.multiple-content';
+
+    @mixin women() {
+        &.multiple-content--women & {
+            @content;
+        }
+    }
+
+    @include women() {
+
+        &__container-parallax {
+
+            &[data-id="1"] {
+
+                @include desk() {
+                    top: 86px;
+                    left: 486px;
+                    width: 294px;
+                    height: 691px;
+                }
+
+                @include mobile() {
+                    top: 40px;
+                    left: 56px;
+                    width: 132px;
+                }
+            }
+
+            &[data-id="2"] {
+
+                @include desk() {
+                    top: 319px;
+                    left: 798px;
+                    width: 388px;
+                    height: 205px;
+                }
+
+                @include mobile() {
+                    top: 143px;
+                    left: 190px;
+                    width: 166px;
+                }
+            }
+        }
+
+        &__txt--title {
+
+            @include desk() {
+                top: 271px;
+                left: 823px;
+            }
+
+            @include mobile() {
+                top: 124px;
+                left: 210px;
+            }
+        }
+    }
+}

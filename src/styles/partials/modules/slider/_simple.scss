@@ -1,0 +1,24 @@
+.slider {
+
+    $block: '.slider';
+
+    @mixin simple() {
+        &.slider--simple & {
+            @content;
+        }
+    }
+
+    @include simple() {
+
+        &__wrapper {
+
+            @include desk() {
+                position: relative;
+                left: 50%;
+                width: 900px;
+
+                @include crossBrowser(transform, translateX(-50%));
+            }
+        }
+    }
+}

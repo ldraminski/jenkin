@@ -1,0 +1,35 @@
+//video
+.story.paralax .body .wrapp_content .content_story.video {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 487px;
+    width: 855px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    iframe {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video__desc {
+        margin-top: 6px;
+        font: 400 10px/10px $fontMain;
+        color: #7A7676;
+    }
+}
+
+#{$bodyClassRWD} .story.paralax .body .wrapp_content .content_story.video {
+    $video_height: calc(0.5625 * 100vw);
+    position: relative;
+    height: $video_height;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    iframe {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}

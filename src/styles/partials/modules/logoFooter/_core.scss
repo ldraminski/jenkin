@@ -1,0 +1,53 @@
+@include desk() {
+
+    li.sponsors__logo {
+        display: flex;
+        justify-content: center;
+        width: 400px;
+        align-items: center;
+      
+    }
+
+    li.gazeta__logo {
+        display: flex;
+    
+        align-items: center;
+     
+    }
+
+
+    ul.sponsors {
+        display: flex;
+        justify-content: center;
+        width: 1170px;
+        margin: 0 auto;
+        align-items: center; 
+    }
+
+
+    ul.sponsors  li img {
+        padding: 0px 20px;
+    }
+}
+
+@include mobile() {
+
+    ul.sponsors {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 360px;
+        margin-top: 30px;
+    }
+    li.sponsors__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    li.gazeta__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

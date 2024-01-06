@@ -1,0 +1,47 @@
+
+
+.rwd.desk #page-top {
+    background-color: transparent;
+
+    #pageHead {
+        background-color: #ffffff;
+        
+        // .column.col1 {
+        //     position: relative;
+        //     left: 50%;
+
+        //     @include crossBrowser(transform, translateX(-50%));
+        // }
+    }
+}
+
+.rwd.desk #page-top #rwdNav {
+    height: 67px;
+    background-color: rgba(193,39,44,0.8);
+
+    ul.p0 {
+        display: flex;
+        padding-right: 80px;
+        float: none;
+        justify-content: space-between;
+    }
+
+    ul.p0 li#e1 a {
+        width: 0px;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-right: 100px;
+        text-indent: 9999px;
+    }
+
+    ul.p0 li a {
+        padding: 0px 19px;
+        font: 400 18px/67px $fontMain;
+    }
+
+    ul.p0 li:hover a, ul.p0 li.active a {
+        background-color: rgba(193,39,44,1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,136 @@
+
+.multiple-content {
+
+    $block: '.multiple-content';
+
+    @mixin twoColumns() {
+        &.multiple-content--twoColumns & {
+            @content;
+        }
+    }
+
+    @mixin uniFonts() {
+        &.multiple-content--uni-fonts & {
+            @content;
+        }
+    }
+
+    &.multiple-content--twoColumns {
+
+        @include desk() {
+            width: 1026px;
+            margin: 50px auto;
+        }
+
+        @include mobile() {
+            width: 400px;
+        }
+    }
+
+    @include twoColumns() {
+
+        &__column {
+
+            @include desk() {
+                width: 50%;
+            }
+
+            @include mobile() {
+                overflow: hidden;
+            }
+        }
+
+        &__column--left {
+
+            @include desk() {
+                width: 75%;
+            }
+
+            @include mobile() {
+                height: 410px;
+            }
+
+            #{$block}__txt:not(#{$block}__txt--title) {
+                
+                @include mobile() {
+                    width: 180px;
+                    margin: 8px 69px auto auto;
+                    text-align: center;
+                }
+            }
+        }
+
+        &__container-parallax {
+    
+            &[data-id="0"] {
+    
+                @include desk() {
+                    width: 1071px;
+                    height: 750px;
+                    margin-left: calc(100% - 1071px);
+                }
+
+                @include mobile() {
+                    right: 0px;
+                    width: 468px;
+                }
+            }
+    
+            &[data-id="1"] {
+    
+                @include desk() {
+                    width: 738px;
+                    height: 730px;
+                    margin-left: calc(100% - 738px);
+                }
+            }
+        }
+
+        &__txt {
+
+            #{$block}__column--left & {
+
+                @include mobile() {
+                    width: 200px;
+                    margin: 10px 170px auto auto;
+                }
+            }
+        }
+
+        &__container-parallax {
+
+            @include mobile() {
+                top: 0px;
+            }
+        }
+
+        &__parallax-pic {
+
+            @include desk() {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+
+            @include mobile() {
+                width: 100%;
+            }
+        }
+    }
+
+    @include uniFonts() {
+
+        &__column--right { 
+
+            #{$block}__txt {
+                @include desk() {
+                    font: 400 16px/24px $fontMain;
+
+                    i {
+                        font: 400 24px/38px $fontMain;
+                    }
+                }
+            }
+        }
+    }
+}

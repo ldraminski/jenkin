@@ -1,0 +1,118 @@
+.multiple-content {
+
+    $block: '.multiple-content';
+    
+    &--singleColumn {
+
+        @include desk() {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @include tablet() {
+            width: 100vw;
+            height: 450px;
+        }
+
+        @include mobile() {
+            width: 100vw;
+            height: 500px;
+        }
+    }
+
+    @mixin singleColumn() {
+        &.multiple-content--singleColumn & {
+            @content;
+        }
+    }
+
+    @include singleColumn() {
+
+        &__column {
+
+            @include desk() {
+                width: 100%
+            }
+        }
+
+        &__content-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__container-parallax {
+    
+            &[data-id="0"] {
+
+                @include mobile() {
+                    width: 100%;
+                }
+            }
+
+            &[data-id="1"] {
+    
+                @include desk() {
+                    top: 350px;
+                    left: 764px;
+                    width: 732px;
+                    height: 115px;
+                }
+
+                @include mobile() {
+                    top: 154px;
+                    left: 180px;
+                    width: 220px;
+                }
+            }
+    
+            &[data-id="2"] {
+    
+                @include desk() {
+                    top: 204px;
+                    left: 413px;
+                    width: 405px;
+                    height: 498px;
+                }
+
+                @include mobile() {
+                    top: 92px;
+                    left: 12px;
+                    width: 179px;
+                }
+            }
+        }
+
+        &__txt--title {
+            text-transform: uppercase;
+
+            @include desk() {
+                position: absolute;
+                top: 300px;
+                left: 61%;
+                width: auto !important;
+                margin: 0px;
+                float: none;
+                font: 500 24px/24px $fontMain;
+                //text-transform: uppercase;
+                color: #004ea2;
+            }
+
+            @include mobile() {
+                position: absolute;
+                top: 134px;
+                left: 216px;
+                margin: 0px;
+                font: 800 9px/12px $fontMain;
+                color: #004ea2;
+            }
+        }
+
+        &__parallax-pic  {
+
+            @include mobile() {
+                width: 100%;
+            }
+        }
+    }
+}

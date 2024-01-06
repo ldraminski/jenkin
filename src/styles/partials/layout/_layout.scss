@@ -1,0 +1,152 @@
+$gridWidth: 1170px;
+
+.desk.rwd.simpleIndex #content {
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.rwd.desk.simpleIndex #col_right {
+    display: none;
+}
+
+.responsive.rwd.simpleIndex #content {
+    overflow: hidden;
+}
+
+.responsive.rwd #content {
+    padding: 0px;
+}
+
+img[src*="Pixel"] {
+    display: none;
+}
+
+.rwd #breadcrumbs {
+    display: none;
+}
+
+.rwd.responsive {
+    padding-top: 0px;
+}
+
+.responsive.rwd #page.n_hat2014 {
+    padding-top: 0px;
+}
+
+.mod_hat2014 .more input.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+}
+
+.responsive.rwd .mod_hat2014 .more {
+    background-position: 0;
+    width: 50px;
+    height: 50px;
+    position: relative;
+
+    &:after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        background-image: url("https://static.im-g.pl/im/4/25006/m25006534,POZNAJ-NIEMCY-MENU.png");
+        background-size: cover;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+        display: inline-block;
+    }
+}
+
+.responsive.rwd .mod_hat2014 .menu-belt {
+    width: 100vw;
+    background-color: #fff;
+}
+
+@include tablet {
+    .mod_hat2014 {
+        display: none;
+    }
+    #columns_wrap {
+        display: none;
+    }
+}
+
+.rwd.desk {
+    overflow-x: hidden;
+}
+
+.rwd #rwdFooter {
+    opacity: 1;
+
+    @include crossBrowser(transition, opacity 0.5s);
+}
+
+.rwd.hidden {
+    overflow: hidden;
+}
+
+.rwd.hidden #rwdFooter {
+    opacity: 0;
+}
+
+.rwd.responsive #page-top {
+    padding: 0px;
+}
+
+.rwd.desk.simpleArt {
+
+    #col_left {
+        width: 940px;
+    }
+
+    #gazeta_article_image>div,
+    #gazeta_article_image>div img {
+        width: 100%;
+    }
+
+    h1 {
+        margin-top: 20px;
+    }
+
+    .imgw img {
+        max-width: 100%;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+
+    #col_right {
+        border: none;
+        padding-top: 0px;
+    }
+}
+
+.rwd.simpleQuiz {
+
+    .quizModule {
+
+        input[type=submit] {
+            background-color: #16192c;
+        }
+    }
+}
+
+.rwd.responsive.simpleQuiz.quizPage {
+
+    #page {
+        padding-top: 50px;
+    }
+
+    #content {
+        padding: 0px 10px;
+    }
+}
+
+.desk.rwd:not(.path_169231) #content {
+    padding-top: 0;
+}

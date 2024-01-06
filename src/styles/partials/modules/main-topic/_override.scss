@@ -1,0 +1,80 @@
+
+.main-topic {
+  
+    
+    &__content {
+    justify-content: center;
+    }
+
+    &__txt {
+        text-shadow: 0px 0px 7px #0000003D;
+        font-family: $fontTitleTyrol;
+        font-size: 90px;
+        line-height: 90px;
+        color: #fff;
+        height: 127px;
+        padding-bottom: 80px;
+        margin-top: 114px;
+    }
+    
+    &__txt:after {
+      content: "";
+      display: block;
+      width: 250px;
+      height: 4px;
+      background: linear-gradient(to left, #ffffff87, #f4d100);
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    &__txt--txt-h2:after {
+    content: "";
+    display: none;
+    }
+
+   &__txt b {
+        font: 700 127px $fontTitleTyrol;
+        
+    }
+
+    &__txt i {
+
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    &__txt--txt-h2 {
+      font: 300 18px $fontTitleTyrol;
+      margin-top: -16px;
+    }
+
+    &__bg-img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+  
+    @include mobile() {
+        
+        &__txt {
+          
+            font-family: $fontTitleTyrol;
+            font-size: 60px;
+            line-height: 68px;
+        
+        }
+
+        &__txt:after {
+     
+            margin-top: 21px;
+        }
+
+        &__txt--txt-h2 {
+            font: 300 18px $fontTitleTyrol;
+            margin-top: 113px;
+          }
+
+    }
+  
+    
+}

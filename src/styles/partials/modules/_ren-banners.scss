@@ -1,0 +1,57 @@
+
+.ren-banners {
+    text-align: center;
+
+    @include desk() {
+        position: relative;
+        left: 50%;
+        display: inline-block;
+        margin: 60px auto;
+        transform: translateX(-50%);
+    }
+
+    @include mobile() {
+        margin: 5px 0px 28px 0px;
+    }
+
+    a {
+        display: inline-block;
+        pointer-events: all;
+
+        &:hover {
+            background: transparent;
+        }
+    }
+
+    a iframe {
+        pointer-events: none;
+    }
+}
+
+.partner-content {
+    display: inline-block;
+    text-align: left;
+
+    @include desk() {
+        position: relative;
+        margin: 0px auto;
+    }
+
+    @include mobile() {
+        margin: 0px auto;
+    }
+
+    .banLabel {
+        display: block;
+        margin-right: 10px;
+        font: 400 12px/12px $mainFont;
+        text-transform: uppercase;
+        color: #bdbdbd;
+
+        @include desk() {
+            top: 0px;
+            position: absolute;
+            transform: translateY(calc(-100% - 10px));
+        }
+    }
+}

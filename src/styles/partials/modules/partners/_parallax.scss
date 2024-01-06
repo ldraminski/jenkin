@@ -1,0 +1,115 @@
+
+.partners {
+    
+    &__parallax-wrapper {
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        pointer-events: none;
+
+        @include mobile() {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__parallax-container {
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+
+        &[data-id="0"] {
+
+            @include desk() {
+                top: 105px;
+                left: -155px;
+            }
+
+            @include mobile() {
+                top: 26px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &[data-id="1"] {
+
+            @include desk() {
+                top: 161px;
+                left: 240px;
+            }
+
+            @include mobile() {
+                top: 55px;
+                left: 18px;
+                width: 350px;
+            }
+        }
+
+        &[data-id="2"] {
+
+            @include desk() {
+                top: 291px;
+                left: 34px;
+            }
+
+            @include mobile() {
+                z-index: 2;
+                top: 214px;
+                left: 15px;
+                width: 40px;
+            }
+        }
+
+        &[data-id="3"] {
+
+            @include desk() {
+                top: 262px;
+                left: 108px;
+            }
+
+            @include mobile() {
+                top: 199px;
+                left: 45px;
+                width: 51px;
+            }
+        }
+
+        &[data-id="4"] {
+            z-index: 2;
+
+            @include desk() {
+                top: 284px;
+                left: 925px;
+            }
+
+            @include mobile() {
+                top: 193px;
+                left: 283px;
+                width: 50px;
+            }
+        }
+
+        &[data-id="5"] {
+
+            @include desk() {
+                top: 137px;
+                left: 991px;
+            }
+
+            @include mobile() {
+                top: 139px;
+                left: 317px;
+                width: 58px;
+            }
+        }
+    }
+    &__parallax-image {
+
+        @include mobile() {
+            width: 100%;
+        }
+    }
+}

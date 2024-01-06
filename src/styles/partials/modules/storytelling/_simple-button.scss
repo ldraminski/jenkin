@@ -1,0 +1,29 @@
+
+.simple-button {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+
+    @include mobile() {
+        margin: 10px 0px;
+    }
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    span {
+        display: inline-block;
+        padding: 20px 40px;
+        color: #fff;
+        background-color: purple;
+        font: 700 27px/27px $fontMain;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        @include mobile() {
+            padding: 10px 20px;
+            font: 700 18px/18px $fontMain;
+        }
+    }
+}

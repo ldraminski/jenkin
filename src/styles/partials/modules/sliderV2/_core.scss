@@ -1,0 +1,235 @@
+
+@import '/node_modules/@glidejs/glide/dist/css/glide.core.min.css';
+
+.sliderV2 {
+    position: relative;
+    $block: &;
+
+    @include desk {
+        width: 1009px;
+        height: 403px;
+        margin: 0px auto;
+    }
+
+    @include mobile() {
+        width: 100vw;
+        margin: 100px auto 120px auto;
+    }
+
+    &__main-title {
+        z-index: 1;
+        position: relative;
+        font: 800 60px/24px $fontTitleTyrol;
+        text-align: center;
+        color: #fff;
+        top: 794px;
+        text-shadow: 0px 0px 7px #0000003D;
+
+        @include desk() {
+            margin: 80px 0px;
+            // font: 800 60px/46px $fontTitleTyrol;
+        }
+
+        i {
+            font-style: normal;
+            font-weight: 300;
+        }
+    }
+
+    &__main-title:after {
+        content: "";
+        display: block;
+        width: 250px;
+        height: 4px;
+        background: linear-gradient(to left, #ffffff87, #f4d100);
+        margin: 0 auto;
+        margin-top: 50px;
+    
+        }
+  
+
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        @include mobile() {
+            width: 100%;
+            height: 380px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        height: 100%;
+    }
+
+    &__slide {
+        position: relative;
+
+        @include desk() {
+            height: 360px;
+            margin-top: 19px;
+        }
+
+        @include mobile() {
+            height: 380px;
+            border-radius: 10px;
+        }
+    }
+
+    &__slide--active {
+
+        @include desk() {
+            height: 403px;
+            margin-top: 0px;
+            transition: 0.4s;
+    
+            #{$block}__container-img {
+                width: 330px;
+                margin: 0px 0px 0px -15px;
+            }
+        }
+    }
+
+    &__container-img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+
+    &__img {
+
+        @include desk() {
+            width: 100%;
+        }
+
+        @include mobile() {
+            position: relative;
+            left: 50%;
+            // height: 100%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__container-txt {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        height: 100%;
+        // text-align: center;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        @include desk() {
+            padding: 0px 17px 17px 17px;
+        }
+
+        @include mobile() {
+            padding: 0px 8px 22px 8px;
+        }
+    }
+
+    &__title {
+        font: 400 16px/24px $fontMain;
+        color: #fff;
+    }
+
+    &__link {
+        margin-top: 35px;
+        font:  18px/24px $fontArtTyrol ;
+        color: #000;
+        width: 273px;
+        height: 50px;
+        border: 4px solid #F4D100;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        padding: 12px 50px 12px 50px;
+        margin-left: 18px;
+
+        &:hover {
+            background-color: transparent;
+            color: #000;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+
+        @include desk() {
+            top: 60%;
+            transform: translateY(-50%);
+        }
+
+        @include mobile() {
+            top: 170px;
+        }
+    }
+
+    &__nav-btn {
+        position: absolute;
+        top: 0px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__nav-btn--prev {
+        left: 0px;
+        transform: translateX(-50%);
+
+        @include mobile() {
+            transform: translateX(-40px);
+        }
+    }
+
+    &__nav-btn--next {
+        right: 0px;
+        transform: translateX(50%) rotate(180deg);
+
+        @include mobile() {
+            transform: translateX(40px) rotate(180deg);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.sliderV2 {
+    $block: &;
+
+    &--video {
+        z-index: 99 !important;
+        position: relative;
+
+        @include desk() {
+            margin-top: 30px;
+        }
+    }
+
+    @mixin slideVideo() {
+        &.sliderV2--video & {
+            @content;
+        }
+    }
+
+    @include slideVideo() {
+
+        &__slide {
+            height: auto;
+        }
+    }
+}
